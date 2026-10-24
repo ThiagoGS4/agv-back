@@ -1,0 +1,36 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        },
+        {
+            "label": "1. Compilar (SDCC)",
+            "type": "shell",
+            "command": "sdcc",
+            "args": [
+                "main.c"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "2. Gravar (stcgal)",
+            "type": "shell",
+            "command": "stcgal",
+            "args": [
+                "-P", "stc15",
+                "-p", "COM3", 
+                "main.ihx"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
