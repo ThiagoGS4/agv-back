@@ -24,6 +24,12 @@ mqttClient.on("message", (topic, message) => {
         });
       }
       break;
+    case "/agv/atBase":
+      io.emit("atBase");
+      break;
+    case "/agv/goingBack":
+      io.emit("goingBack");
+      break;
     case "/agv/color/R":
       if (checkNum(messageStr)) {
         io.emit("R", {

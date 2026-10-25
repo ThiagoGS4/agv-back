@@ -12,6 +12,8 @@ mqttClient.on("connect", () => {
   mqttClient.subscribe("/agv/color/R");
   mqttClient.subscribe("/agv/color/G");
   mqttClient.subscribe("/agv/color/B");
+  mqttClient.subscribe("/agv/atBase");
+  mqttClient.subscribe("/agv/goingBack");
 });
 
 mqttClient.on("error", (err) => {
